@@ -41,7 +41,7 @@ sequelize.sync()
         año: 2010
     }) )
     .then( () => Automovil.destroy({
-        where: {id:7}
+        where: {id:15}
     }))
     .then( () => {
         console.log("Se elimino el registro correctamente")

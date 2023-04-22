@@ -45,6 +45,6 @@ sequelize.sync()
     modelo: "Duna" 
     }, 
     { where: {
-        marca: "Ford" 
+        marca: "Audi" 
     }}))
 

@@ -35,23 +35,12 @@ Automovil.init({
 }, {sequelize, modelName:'automovil'});
 
 
-//Insercion y actualizacion de un registro
-//Interprete esto como que pueda agregar un registro. Luego que lo agrega, actualiza el registro que le indiquemos por id.
 sequelize.sync()
-    .then( () => Automovil.create({
-        marca: "Nissan",
-        modelo: "Sentra",
-        año: 2012
-    }) )
-    .then ( () => Automovil.update({
-        marca: "Ford",
-        modelo: "Mustang",
-        año: 2017
-    },{
-        where : {id: 17}
+    .then( () => Automovil.destroy({
+        where: {marca:"Audi"}
     }))
     .then( () => {
-        console.log("Se actualizo el registro correctamente")
+        console.log("Se elimino el registro correctamente")
     }).catch( (error) => {
-        console.log("Ocurrio un error al actualizar el registro", error)
+        console.log("Ocurrio un error al eliminar el registro", error)
     })
